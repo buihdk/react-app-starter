@@ -1,4 +1,5 @@
 # React App Starter
+This project template was set up from scratch without using [create-react-app](https://github.com/facebook/create-react-app) boilerplate code. This project includes the below vendor packages.
 
 Author: **Khoa Bui**
 
@@ -9,7 +10,4 @@ Author: **Khoa Bui**
 - [x] Webpack, Webpack Dev Server, and Webpack CLI
 - [x] Eslint and Prettier
 - [x] Loader modules
-- [x] Proptypes
-- [ ] React Router
-- [ ] Redux
-- [ ] GraphQL
+- [x] PropTypes
