@@ -1,0 +1,32 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true,
+    "mocha": true,
+    "jest": true
+  },
+  "extends": [
+    "airbnb",
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": ["prettier", "import", "react-hooks"],
+  "rules": {
+    "global-require": 0,
+    "import/extensions": 0,
+    "import/no-dynamic-require": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-unresolved": 0,
+    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
+    "no-unused-vars": [2, { "args": "none" }],
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react/jsx-indent": 0,
+    "react/jsx-props-no-spreading": "off",
+    "react/state-in-constructor": 1
+  }
+}
