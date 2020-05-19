@@ -9,8 +9,8 @@
   "scripts": {
     "build": "webpack --mode development",
     "start": "webpack-dev-server --mode development",
-    "test": "./node_modules/.bin/jest --config=./jest.config.js --coverage --runInBand"
     "lint": "./node_modules/.bin/eslint src/ --ext .js,.jsx --cache --fix",
+    "test": "./node_modules/.bin/jest --config=./jest.config.js --coverage --runInBand"
   },
   "dependencies": {
     "react": "^16.12.0",
