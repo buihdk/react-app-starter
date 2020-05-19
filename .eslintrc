@@ -15,17 +15,19 @@
   ],
   "plugins": ["prettier", "import", "react-hooks"],
   "rules": {
-    "global-require": 0,
-    "import/extensions": 0,
-    "import/no-dynamic-require": 0,
-    "import/no-extraneous-dependencies": 0,
-    "import/no-unresolved": 0,
-    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
-    "no-unused-vars": [2, { "args": "none" }],
-    "react-hooks/exhaustive-deps": "warn",
+    "global-require": "off",
+    "import/extensions": "off",
+    "import/no-dynamic-require": "off",
+    "import/no-extraneous-dependencies": "warn",
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "warn",
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-restricted-globals": "off",
+    "no-unused-vars": ["error", { "args": "none" }],
+    "react/display-name": "off",
+    "react/jsx-indent": "off",
+    "react/jsx-wrap-multilines": "off",
     "react-hooks/rules-of-hooks": "error",
-    "react/jsx-indent": 0,
-    "react/jsx-props-no-spreading": "off",
-    "react/state-in-constructor": 1
+    "react-hooks/exhaustive-deps": "warn"
   }
 }
