@@ -18,7 +18,7 @@
     "global-require": "off",
     "import/extensions": "off",
     "import/no-dynamic-require": "off",
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "import/no-unresolved": "off",
     "import/prefer-default-export": "warn",
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
