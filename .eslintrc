@@ -25,9 +25,10 @@
     "no-restricted-globals": "off",
     "no-unused-vars": ["error", { "args": "none" }],
     "react/display-name": "off",
-    "react/jsx-indent": "off",
-    "react/jsx-wrap-multilines": "off",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-indent": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-wrap-multilines": "off"
   }
 }
