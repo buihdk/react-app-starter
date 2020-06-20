@@ -7,8 +7,10 @@
   "author": "contact@buihdk.com",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --mode development",
-    "start": "webpack-dev-server --mode development",
+    "build": "webpack --config webpack.prod.js",
+    "build:dev": "webpack --config webpack.dev.js",
+    "deploy": "gh-pages -d dist",
+    "start": "webpack-dev-server --open --config webpack.dev.js",
     "lint": "./node_modules/.bin/eslint src/ --ext .js,.jsx --cache --fix",
     "test": "./node_modules/.bin/jest --config=./jest.config.js --coverage --runInBand"
   },
@@ -47,6 +49,7 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
+    "gh-pages": "^3.0.0",
     "jest": "^24.9.0",
     "jest-environment-jsdom-fourteen": "^1.0.1",
     "jest-fetch-mock": "^2.1.2",
@@ -59,6 +62,7 @@
     "style-loader": "^1.0.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2"
   }
 }
