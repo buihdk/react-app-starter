@@ -7,8 +7,5 @@ node_modules
 # Ignore yarn.lock (for now)
 yarn.lock
 
-# Ignore build version
-dist
-
 # Ignore test coverage
 coverage
