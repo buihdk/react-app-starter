@@ -10,7 +10,7 @@
     "build": "webpack --config webpack.prod.js",
     "build:dev": "webpack --config webpack.dev.js",
     "deploy": "gh-pages -d dist",
-    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "start": "webpack-dev-server --config webpack.dev.js",
     "lint": "./node_modules/.bin/eslint src/ --ext .js,.jsx --cache --fix",
     "test": "./node_modules/.bin/jest --config=./jest.config.js --coverage --runInBand"
   },
