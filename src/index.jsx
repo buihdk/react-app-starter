@@ -5,6 +5,7 @@ import I18n from 'i18n-js';
 import App from './app/App';
 
 const locale = 'en';
+
 import(`public/locales/${locale}`).then(res => {
   I18n.translations[locale] = res.default;
   I18n.locale = locale;
