@@ -24,11 +24,14 @@
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "no-restricted-globals": "off",
     "no-unused-vars": ["error", { "args": "none" }],
+    "prefer-destructuring": "warn",
     "react/display-name": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-curly-newline": "warn",
     "react/jsx-indent": "off",
     "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": "warn",
     "react/jsx-wrap-multilines": "off"
   }
 }
