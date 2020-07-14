@@ -8,6 +8,7 @@ Author: **Khoa Bui**
 - [x] Jest, Enzyme, and other test libraries
 - [x] Babel, Babel plugins, and Babel CLI
 - [x] Webpack, Webpack Dev Server, and Webpack CLI
+- [x] Internationalization with i18n
 - [x] Eslint and Prettier
 - [x] Loader modules
 - [x] PropTypes
