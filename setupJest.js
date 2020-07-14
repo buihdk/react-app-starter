@@ -9,5 +9,6 @@ global.fetch = require('jest-fetch-mock');
 // Setup I18n
 const I18n = require('i18n-js');
 
-I18n.translations.en = EN;
-I18n.locale = 'en';
+const locale = 'en';
+I18n.translations[locale] = EN;
+I18n.locale = locale;
