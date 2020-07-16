@@ -5,14 +5,12 @@ import I18n from 'i18n-js';
 import App from './app/App';
 
 const locale = 'en';
-
-import(`public/locales/${locale}`).then(res => {
-  I18n.translations[locale] = res.default;
-  I18n.locale = locale;
-
-  render(<App />, document.getElementById('root'));
-});
+const en = require(`src/locales/${locale}.json`);
+I18n.translations[locale] = en;
+I18n.locale = locale;
 
 if (process && process.env) {
   console.warn(`node environment: ${process.env.NODE_ENV}`);
 }
+
+render(<App />, document.getElementById('root'));
