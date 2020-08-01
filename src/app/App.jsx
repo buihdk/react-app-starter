@@ -8,6 +8,10 @@ const App = () => (
   <>
     <h1>{I18n.t('title')}</h1>
     <p>{I18n.t('instruction')}</p>
+    <p>
+      {`Environment variables such as DB_HOST = ${process.env.DB_HOST} 
+      and DB_PASS = ${process.env.DB_PASS} are located in .env file`}
+    </p>
     <PacMan />
   </>
 );

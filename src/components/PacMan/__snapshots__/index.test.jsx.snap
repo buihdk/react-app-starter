@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BeanEater renders without crashing 1`] = `
+exports[`PacMan renders without crashing 1`] = `
 <div
-  className="spinner-bean-eater"
+  className="spinner-pac-man"
 >
   <div
     className="dot"
