@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BeanEater renders without crashing 1`] = `
+<div
+  className="spinner-bean-eater"
+>
+  <div
+    className="dot"
+  >
+    <div>
+      <div />
+      <div />
+      <div />
+    </div>
+    <div>
+      <div />
+      <div />
+      <div />
+    </div>
+  </div>
+</div>
+`;
