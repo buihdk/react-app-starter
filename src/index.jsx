@@ -9,8 +9,4 @@ const en = require(`src/locales/${locale}.json`);
 I18n.translations[locale] = en;
 I18n.locale = locale;
 
-if (process && process.env) {
-  console.warn(`node environment: ${process.env.NODE_ENV}`);
-}
-
 render(<App />, document.getElementById('root'));

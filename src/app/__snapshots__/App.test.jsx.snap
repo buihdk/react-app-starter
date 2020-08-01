@@ -5,5 +5,9 @@ exports[`App renders without crashing 1`] = `
   <h1>
     React App Starter
   </h1>
+  <p>
+    Open src/app/App.jsx to start developing your React app.
+  </p>
+  <BeanEater />
 </Fragment>
 `;
