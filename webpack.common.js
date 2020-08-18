@@ -1,6 +1,8 @@
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
+const FILE_LOADER = 'file-loader';
+
 module.exports = {
   entry: './src/index.jsx',
   module: {
@@ -35,6 +37,41 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.(bmp|gif|jpe?g|png)$/,
+        use: [
+          {
+            loader: FILE_LOADER,
+            options: {
+              name: '[name].[sha512:hash:base64:7].[ext]',
+              outputPath: 'static/images',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|otf|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: FILE_LOADER,
+            options: {
+              name: '[name].[sha512:hash:base64:7].[ext]',
+              outputPath: 'static/fonts',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(wav|mp3)$/,
+        use: [
+          {
+            loader: FILE_LOADER,
+            options: {
+              name: 'static/audio/[name].[sha512:hash:base64:7].[ext]',
+            },
+          },
+        ],
+      },
     ],
   },
   resolve: {
@@ -45,8 +82,8 @@ module.exports = {
     },
   },
   output: {
-    path: path.resolve(__dirname, 'dist/'),
-    publicPath: '/dist/',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
     filename: 'bundle.js',
   },
   plugins: [new Dotenv()],

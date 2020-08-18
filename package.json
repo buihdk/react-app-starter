@@ -9,9 +9,12 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "build:dev": "webpack --config webpack.dev.js",
+    "clean": "rm -rf ./coverage ./dist",
     "deploy": "gh-pages -d dist",
-    "start": "webpack-dev-server --config webpack.dev.js",
     "lint": "./node_modules/.bin/eslint src/ --ext .js,.jsx --cache --fix",
+    "lint:prettier": "prettier --config .prettierrc --write ./src/**/**/**/*.{js,jsx,json,css}",
+    "serve": "serve -s -p ${WEB_APP_PORT:=8000} dist",
+    "start": "webpack-dev-server --config webpack.dev.js",
     "test": "./node_modules/.bin/jest --config=./jest.config.js --coverage --runInBand"
   },
   "dependencies": {
@@ -38,6 +41,7 @@
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^6.0.3",
     "css-loader": "^3.2.1",
     "dotenv-webpack": "^2.0.0",
     "enzyme": "^3.10.0",
