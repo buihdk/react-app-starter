@@ -7,19 +7,21 @@
       content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
     />
     <title>React App Starter</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./static/styles.css" />
   </head>
 
   <body>
     <div id="root">
-      <div class="lds-ripple">
-        <div></div>
-        <div></div>
+      <div id="ripple-wrapper">
+        <div id="lds-ripple">
+          <div></div>
+          <div></div>
+        </div>
       </div>
     </div>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <script src="../dist/bundle.js"></script>
+    <script src="./bundle.js"></script>
   </body>
 </html>

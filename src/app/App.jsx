@@ -4,6 +4,8 @@ import I18n from 'i18n-js';
 
 import PacMan from 'src/components/PacMan';
 
+import './App.css'
+
 const App = () => (
   <>
     <h1>{I18n.t('title')}</h1>

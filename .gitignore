@@ -12,3 +12,6 @@ coverage
 
 # Ignore environment variables
 .env
+
+# Ignore build
+dist
