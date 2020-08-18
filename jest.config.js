@@ -13,7 +13,7 @@ module.exports = {
     '\\.(css|less)$': '<rootDir>/__mocks__/styleMock.js',
   },
   modulePaths: ['node_modules', '<rootDir>', '<roots>'],
-  setupFilesAfterEnv: ['./setupJest.js', './setupEnzyme.js'],
+  setupFilesAfterEnv: ['./setupTests.js'],
   testEnvironment: 'jest-environment-jsdom-fourteen',
   testMatch: [
     '<rootDir>/src/*.{spec,test}.{js,jsx,ts,tsx}',
