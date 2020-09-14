@@ -1,9 +1,9 @@
 /* eslint-disable */
-const JSDom = require('jsdom')
-const JestUtil = require('jest-util')
-const mock = require('jest-mock')
+const JSDom = require('jsdom');
+const JestUtil = require('jest-util');
+const mock = require('jest-mock');
 
-const { FakeTimers, installCommonGlobals } = JestUtil
+const { FakeTimers, installCommonGlobals } = JestUtil;
 
 class JSDOMEnvironment {
   constructor(config, options = {}) {
@@ -14,60 +14,60 @@ class JSDOMEnvironment {
           pretendToBeVisual: true,
           runScripts: 'dangerously',
           url: config.testURL,
-          virtualConsole: new JSDom.VirtualConsole().sendTo(options.console || console)
+          virtualConsole: new JSDom.VirtualConsole().sendTo(options.console || console),
         },
-        config.testEnvironmentOptions
-      )
-    )
+        config.testEnvironmentOptions,
+      ),
+    );
 
-    this.global = this.dom.window.document.defaultView
-    const global = this.global
+    this.global = this.dom.window.document.defaultView;
+    const global = this.global;
     // Node's error-message stack size is limited at 10, but it's pretty useful
     // to see more than that when a test fails.
-    this.global.Error.stackTraceLimit = 100
-    installCommonGlobals(global, config.globals)
+    this.global.Error.stackTraceLimit = 100;
+    installCommonGlobals(global, config.globals);
 
-    this.moduleMocker = new mock.ModuleMocker(global)
+    this.moduleMocker = new mock.ModuleMocker(global);
 
     const timerConfig = {
       idToRef: id => id,
-      refToId: ref => ref
-    }
+      refToId: ref => ref,
+    };
 
     this.fakeTimers = new FakeTimers({
       config,
       global,
       moduleMocker: this.moduleMocker,
-      timerConfig
-    })
+      timerConfig,
+    });
   }
 
   setup() {
-    return Promise.resolve()
+    return Promise.resolve();
   }
 
   teardown() {
     if (this.fakeTimers) {
-      this.fakeTimers.dispose()
+      this.fakeTimers.dispose();
     }
 
     if (this.global) {
-      this.global.close()
+      this.global.close();
     }
 
-    this.global = null
-    this.document = null
-    this.fakeTimers = null
-    return Promise.resolve()
+    this.global = null;
+    this.document = null;
+    this.fakeTimers = null;
+    return Promise.resolve();
   }
 
   runScript(script) {
     if (this.dom) {
-      return this.dom.runVMScript(script)
+      return this.dom.runVMScript(script);
     }
 
-    return null
+    return null;
   }
 }
 
-module.exports = JSDOMEnvironment
+module.exports = JSDOMEnvironment;
