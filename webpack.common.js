@@ -21,21 +21,18 @@ module.exports = {
             loader: 'eslint-loader',
           },
         ],
+        include: path.resolve(__dirname, 'src'),
       },
       {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
-        include: /src/,
-      },
-      {
-        test: /\.(js|jsx)$/,
-        use: 'react-hot-loader/webpack',
-        include: /node_modules/,
+        exclude: path.resolve(__dirname, 'node_modules'),
+        include: path.resolve(__dirname, 'src'),
       },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
+        include: path.resolve(__dirname, 'src'),
       },
       {
         test: /\.(bmp|gif|jpe?g|png)$/,
@@ -48,6 +45,7 @@ module.exports = {
             },
           },
         ],
+        include: path.resolve(__dirname, 'src'),
       },
       {
         test: /\.(woff(2)?|ttf|eot|otf|svg)(\?v=\d+\.\d+\.\d+)?$/,
@@ -60,6 +58,7 @@ module.exports = {
             },
           },
         ],
+        include: path.resolve(__dirname, 'src'),
       },
       {
         test: /\.(wav|mp3)$/,
@@ -71,6 +70,7 @@ module.exports = {
             },
           },
         ],
+        include: path.resolve(__dirname, 'src'),
       },
     ],
   },

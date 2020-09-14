@@ -6,7 +6,7 @@ const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   mode: 'production',
-  devtool: 'source-map',
+  devtool: 'hidden-source-map',
   plugins: [
     new CopyPlugin({
       patterns: [{ from: path.join(__dirname, 'public') }],

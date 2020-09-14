@@ -15,14 +15,13 @@
     "lint": "./node_modules/.bin/eslint src/ --ext .js,.jsx --cache --fix",
     "lint:prettier": "prettier --config .prettierrc --write ./src/**/**/**/*.{js,jsx,json,css}",
     "serve": "serve -s -p ${WEB_APP_PORT:=8000} dist",
-    "start": "webpack-dev-server --config webpack.dev.js --port 4000",
+    "start": "webpack-dev-server --config webpack.dev.js",
     "test": "./node_modules/.bin/jest --config=./jest.config.js --env=./setupJestEnv.js --coverage --runInBand"
   },
   "dependencies": {
     "i18n-js": "^3.7.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-hot-loader": "^4.12.18"
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.4",
@@ -69,9 +68,11 @@
     "jest-watch-typeahead": "^0.4.2",
     "prettier": "^1.19.1",
     "prop-types": "^15.7.2",
+    "react-hot-loader": "^4.12.21",
     "react-test-renderer": "^16.12.0",
     "source-map-explorer": "^2.5.0",
     "style-loader": "^1.0.1",
+    "terser-webpack-plugin": "^4.2.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0",
