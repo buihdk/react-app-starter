@@ -3,10 +3,10 @@
 exports[`App renders without crashing 1`] = `
 <Fragment>
   <h1>
-    React App Starter
+    mock translated title
   </h1>
   <p>
-    Open src/app/App.jsx to start developing your React app.
+    mock translated description
   </p>
   <PacMan />
 </Fragment>
