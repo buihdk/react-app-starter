@@ -16,7 +16,7 @@
     "lint:prettier": "prettier --config .prettierrc --write ./src/**/**/**/*.{js,jsx,json,css}",
     "serve": "serve -s -p ${WEB_APP_PORT:=8000} dist",
     "start": "webpack-dev-server --config webpack.dev.js --port 4000",
-    "test": "./node_modules/.bin/jest --config=./jest.config.js --coverage --runInBand"
+    "test": "./node_modules/.bin/jest --config=./jest.config.js --env=./setupJestEnv.js --coverage --runInBand"
   },
   "dependencies": {
     "i18n-js": "^3.7.1",

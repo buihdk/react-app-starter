@@ -4,7 +4,7 @@ import I18n from 'i18n-js';
 
 import PacMan from 'src/components/PacMan';
 
-import './App.css'
+import './App.css';
 
 const App = () => (
   <>

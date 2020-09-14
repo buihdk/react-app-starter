@@ -1,8 +1,12 @@
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import { createSerializer } from 'enzyme-to-json';
 
 // Setup enzyme
 configure({ adapter: new Adapter() });
+
+// Setup snapshotSerializers
+expect.addSnapshotSerializer(createSerializer({ mode: 'deep' }));
 
 // Mock fetch
 global.fetch = require('jest-fetch-mock');
