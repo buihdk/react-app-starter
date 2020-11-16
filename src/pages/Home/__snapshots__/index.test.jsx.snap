@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage renders without crashing 1`] = `
+<Fragment>
+  <h1>
+    mock translated title
+  </h1>
+  <p>
+    mock translated description
+  </p>
+  <Link
+    to="/mock-users"
+  >
+    Mock Users Page
+  </Link>
+  <PacMan />
+</Fragment>
+`;

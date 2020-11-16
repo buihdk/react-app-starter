@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App renders without crashing 1`] = `
-<Fragment>
-  <h1>
-    mock translated title
-  </h1>
-  <p>
-    mock translated description
-  </p>
-  <PacMan />
-</Fragment>
+<Suspense
+  fallback={
+    <div
+      className="loading-app"
+    />
+  }
+>
+  <Memo(Routes) />
+</Suspense>
 `;
