@@ -1,0 +1,5 @@
+export const FETCH_BEGIN = 'USER_FETCH_BEGIN';
+export const FETCH_DONE = 'USER_FETCH_DONE';
+
+export const UPDATE_BEGIN = 'USER_UPDATE_BEGIN';
+export const UPDATE_DONE = 'USER_UPDATE_DONE';
