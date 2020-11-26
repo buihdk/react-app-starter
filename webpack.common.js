@@ -78,7 +78,14 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
     alias: {
       public: path.resolve(__dirname, 'public'),
-      src: path.resolve(__dirname, 'src'),
+      app: path.resolve(__dirname, 'src/app'),
+      components: path.resolve(__dirname, 'src/components'),
+      locales: path.resolve(__dirname, 'src/locales'),
+      modules: path.resolve(__dirname, 'src/modules'),
+      pages: path.resolve(__dirname, 'src/pages'),
+      routes: path.resolve(__dirname, 'src/routes'),
+      services: path.resolve(__dirname, 'src/services'),
+      utils: path.resolve(__dirname, 'src/utils'),
     },
   },
   output: {
