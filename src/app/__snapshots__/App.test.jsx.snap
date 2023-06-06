@@ -8,6 +8,6 @@ exports[`App renders without crashing 1`] = `
     />
   }
 >
-  <Memo(Routes) />
+  <Memo(RoutesV6) />
 </Suspense>
 `;
