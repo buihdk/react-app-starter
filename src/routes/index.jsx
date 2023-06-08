@@ -1,19 +1,17 @@
-import React, { memo, lazy } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import React, { lazy, memo } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 const HomePage = lazy(() => import('pages/Home'));
 const UserPage = lazy(() => import('pages/User'));
 const NotFoundPage = lazy(() => import('pages/NotFound'));
 
-const Routes = () => (
-  <Switch>
-    <Route exact path="/">
-      <Redirect to="/home" />
-    </Route>
-    <Route exact path="/home" component={() => <HomePage />} />
-    <Route exact path="/mock-users" component={() => <UserPage />} />
-    <Route path="*" component={() => <NotFoundPage />} />
-  </Switch>
+const RoutesV6 = () => (
+  <Routes>
+    <Route path="/" element={<Navigate replace to="/home" />} />
+    <Route path="home" element={<HomePage />} />
+    <Route path="mock-users" element={<UserPage />} />
+    <Route path="*" element={<NotFoundPage />} />
+  </Routes>
 );
 
-export default memo(Routes);
+export default memo(RoutesV6);

@@ -25,7 +25,7 @@
     "no-console": "off",
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "no-restricted-globals": "off",
-    "no-unused-vars": ["error", { "args": "none" }],
+    "no-unused-vars": "warn",
     "prefer-destructuring": "warn",
     "react/display-name": "off",
     "react-hooks/rules-of-hooks": "error",
