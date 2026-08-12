@@ -15,10 +15,12 @@ module.exports = {
     '^components(.*)': '<rootDir>/src/components/$1',
     '^locales(.*)': '<rootDir>/src/locales/$1',
     '^modules(.*)': '<rootDir>/src/modules/$1',
+    '^pages(.*)': '<rootDir>/src/pages/$1',
     '^routes(.*)': '<rootDir>/src/routes/$1',
+    '^services(.*)': '<rootDir>/src/services/$1',
     '^utils(.*)': '<rootDir>/src/utils/$1',
   },
-  modulePaths: ['node_modules', '<rootDir>', '<roots>'],
+  modulePaths: ['node_modules', '<rootDir>'],
   setupFilesAfterEnv: ['./setupTests.js'],
   testEnvironment: 'jest-environment-jsdom-fourteen',
   testMatch: [
