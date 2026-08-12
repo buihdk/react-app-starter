@@ -8,7 +8,7 @@ export default {
     const config = {};
     const res = await baseService.get(fetchUsersPath, config);
 
-    return res.data ? { ...res, data: res.data.map(userFromServer) || [] } : res;
+    return Array.isArray(res.data) ? { ...res, data: res.data.map(userFromServer) } : res;
   },
 
   update: async user => {

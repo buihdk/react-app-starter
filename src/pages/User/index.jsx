@@ -15,7 +15,9 @@ export const mapDispatchToProps = {
 };
 
 const UserPage = ({ onFetchUsers, list }) => {
-  useEffect(() => onFetchUsers(), [onFetchUsers]);
+  useEffect(() => {
+    onFetchUsers();
+  }, [onFetchUsers]);
 
   return (
     <>
@@ -29,7 +31,13 @@ const UserPage = ({ onFetchUsers, list }) => {
 
 UserPage.propTypes = {
   onFetchUsers: PropTypes.func,
-  list: PropTypes.arrayOf({}),
+  list: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      firstName: PropTypes.string,
+      lastName: PropTypes.string,
+    }),
+  ),
 };
 
 UserPage.defaultProps = {
