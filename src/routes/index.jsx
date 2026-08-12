@@ -21,5 +21,3 @@ const router = createBrowserRouter([
 const RoutesV6 = () => <RouterProvider router={router} />;
 
 export default memo(RoutesV6);
-</content>
-</invoke>
