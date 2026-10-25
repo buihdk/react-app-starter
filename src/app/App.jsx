@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react';
-// import { hot } from 'react-hot-loader/root';
 
 import Routes from 'routes';
 import './App.css';

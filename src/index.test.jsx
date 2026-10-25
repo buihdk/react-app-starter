@@ -1,6 +1,8 @@
-import Index from '.';
+import { act } from '@testing-library/react';
 
-it('renders without crashing', () => {
-  const wrapper = JSON.stringify({ ...Index, _reactInternalInstance: 'censored' });
-  expect(wrapper).toMatchSnapshot();
+it('mounts the app into #root', async () => {
+  await act(async () => {
+    await import('.');
+  });
+  expect(document.getElementById('root').childElementCount).toBeGreaterThan(0);
 });

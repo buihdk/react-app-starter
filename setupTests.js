@@ -1,12 +1,9 @@
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import { createSerializer } from 'enzyme-to-json';
+import { TextEncoder, TextDecoder } from 'util';
+import '@testing-library/jest-dom';
 
-// Setup enzyme
-configure({ adapter: new Adapter() });
-
-// Setup snapshotSerializers
-expect.addSnapshotSerializer(createSerializer({ mode: 'deep' }));
+// jsdom does not provide these. react-router needs them.
+global.TextEncoder = TextEncoder;
+global.TextDecoder = TextDecoder;
 
 // Mock fetch
 global.fetch = require('jest-fetch-mock');
@@ -19,3 +16,6 @@ const localStorageMock = {
   clear: jest.fn(),
 };
 global.localStorage = localStorageMock;
+
+// The app mounts into #root, so provide it.
+document.body.innerHTML = '<div id="root"></div>';

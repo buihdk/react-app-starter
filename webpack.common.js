@@ -1,28 +1,11 @@
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
-
-const FILE_LOADER = 'file-loader';
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   entry: './src/index.jsx',
   module: {
     rules: [
-      { parser: { requireEnsure: false } },
-      {
-        test: /\.(js|jsx|ts|tsx)$/,
-        enforce: 'pre',
-        use: [
-          {
-            options: {
-              cache: true,
-              eslintPath: 'eslint',
-              resolvePluginsRelativeTo: __dirname,
-            },
-            loader: 'eslint-loader',
-          },
-        ],
-        include: path.resolve(__dirname, 'src'),
-      },
       {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
@@ -36,46 +19,26 @@ module.exports = {
       },
       {
         test: /\.(bmp|gif|jpe?g|png)$/,
-        use: [
-          {
-            loader: FILE_LOADER,
-            options: {
-              name: '[name].[sha512:hash:base64:7].[ext]',
-              outputPath: 'static/images',
-            },
-          },
-        ],
+        type: 'asset/resource',
+        generator: { filename: 'static/images/[name].[contenthash:7][ext]' },
         include: path.resolve(__dirname, 'src'),
       },
       {
         test: /\.(woff(2)?|ttf|eot|otf|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: FILE_LOADER,
-            options: {
-              name: '[name].[sha512:hash:base64:7].[ext]',
-              outputPath: 'static/fonts',
-            },
-          },
-        ],
+        type: 'asset/resource',
+        generator: { filename: 'static/fonts/[name].[contenthash:7][ext]' },
         include: path.resolve(__dirname, 'src'),
       },
       {
         test: /\.(wav|mp3)$/,
-        use: [
-          {
-            loader: FILE_LOADER,
-            options: {
-              name: 'static/audio/[name].[sha512:hash:base64:7].[ext]',
-            },
-          },
-        ],
+        type: 'asset/resource',
+        generator: { filename: 'static/audio/[name].[contenthash:7][ext]' },
         include: path.resolve(__dirname, 'src'),
       },
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
     alias: {
       public: path.resolve(__dirname, 'public'),
       app: path.resolve(__dirname, 'src/app'),
@@ -93,5 +56,8 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js',
   },
-  plugins: [new Dotenv()],
+  plugins: [
+    new Dotenv(),
+    new ESLintPlugin({ extensions: ['js', 'jsx'], context: 'src', cache: true }),
+  ],
 };

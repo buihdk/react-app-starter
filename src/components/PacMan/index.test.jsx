@@ -1,12 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import PacMan from '.';
 
 describe('PacMan', () => {
-  const wrapper = shallow(<PacMan />);
-
   test('renders without crashing', () => {
-    expect(wrapper).toMatchSnapshot();
+    const { container } = render(<PacMan />);
+    expect(container.querySelector('.spinner-pac-man')).toBeInTheDocument();
   });
 });

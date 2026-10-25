@@ -14,7 +14,7 @@ export const mapDispatchToProps = {
   onUpdateUser: updateUser,
 };
 
-const UserPage = ({ onFetchUsers, list }) => {
+const UserPage = ({ onFetchUsers = () => {}, list = [] }) => {
   useEffect(() => {
     onFetchUsers();
   }, [onFetchUsers]);
@@ -38,11 +38,6 @@ UserPage.propTypes = {
       lastName: PropTypes.string,
     }),
   ),
-};
-
-UserPage.defaultProps = {
-  onFetchUsers: () => {},
-  list: [],
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserPage);

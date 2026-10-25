@@ -1,5 +1,5 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "env": {
     "node": true,
     "browser": true,
@@ -28,9 +28,11 @@
     "no-unused-vars": "warn",
     "prefer-destructuring": "warn",
     "react/display-name": "off",
+    "react/function-component-definition": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-curly-newline": "warn",
+    "react/require-default-props": ["error", { "functions": "defaultArguments" }],
     "react/jsx-indent": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-props-no-spreading": "warn",

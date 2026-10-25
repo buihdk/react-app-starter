@@ -22,7 +22,7 @@ module.exports = {
   },
   modulePaths: ['node_modules', '<rootDir>'],
   setupFilesAfterEnv: ['./setupTests.js'],
-  testEnvironment: 'jest-environment-jsdom-fourteen',
+  testEnvironment: 'jest-environment-jsdom',
   testMatch: [
     '<rootDir>/src/*.{spec,test}.{js,jsx,ts,tsx}',
     '<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}',

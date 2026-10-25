@@ -1,11 +1,13 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import App from './App';
 
+jest.mock('routes', () => () => <div data-testid="routes" />);
+
 describe('App', () => {
   test('renders without crashing', () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper).toMatchSnapshot();
+    const { getByTestId } = render(<App />);
+    expect(getByTestId('routes')).toBeInTheDocument();
   });
 });
